@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Details | Nice Place</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/product.css" />
+
+    <script
+      defer
+      type="module"
+      src="src/controllers/ViewProductContr.js"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="logo"> Nice <span>Place</span> </a>
+
+      <button class="back-btn">← Back</button>
+    </header>
+
+    <main>
+      <section class="meal-details">
+        <div class="meal-image">
+          <img class="mealImg" src="" alt="Meal" />
+
+          <div class="meal-category">
+            <span id="mealCategory">Chicken</span>
+          </div>
+        </div>
+
+        <div class="meal-info">
+          <h1 class="mealTitle">Chicken Fried Rice</h1>
+
+          <p class="meal-location">
+            <span id="mealArea"> Chinese </span>
+
+            •
+
+            <span id="mealTags"> Rice, Dinner </span>
+          </p>
+
+          <p id="mealDescription">
+            <!-- A delicious homemade meal prepared with fresh ingredients. -->
+          </p>
+
+          <div class="actions">
+            <button class="blog-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0a0a0a"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-compass-icon lucide-compass"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"
+                />
+              </svg>
+              Browse Meal
+            </button>
+
+            <button class="outline-btn">▶ Watch Video</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+
+        <div class="ingredient-grid" id="ingredientGrid"></div>
+      </section>
+
+      <section class="instructions">
+        <h2>Cooking Instructions</h2>
+
+        <div id="mealInstructions"></div>
+      </section>
+
+      <section class="video-section">
+        <h2>Recipe Video</h2>
+
+        <div class="video-wrapper">
+          <iframe id="mealVideo" src="" allowfullscreen> </iframe>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

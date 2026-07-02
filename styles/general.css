@@ -1,0 +1,205 @@
+:root {
+  /* =========================
+     COLORS
+  ========================= */
+
+  /* Brand / Accent */
+  --clr-gold: #d8b36a;
+  --clr-gold-light: #e6c98a;
+  --clr-gold-dark: #c49b4f;
+
+  /* Backgrounds */
+  --clr-bg-primary: #0a0a0a;
+  --clr-bg-secondary: #171717;
+  --clr-bg-tertiary: #242424;
+
+  /* Light Surfaces */
+  --clr-surface: #f5f5f5;
+  --clr-surface-alt: #ffffff;
+  --clr-surface-muted: #e5e7eb;
+
+  /* Text */
+  --clr-text-primary: #111111;
+  --clr-text-secondary: #6b7280;
+  --clr-text-light: #ffffff;
+  --clr-text-light-muted: #d1d5db;
+
+  /* States */
+  --clr-success: #22c55e;
+  --clr-warning: #f59e0b;
+  --clr-danger: #ef4444;
+  --gradient: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.2) 100%
+  );
+
+  --blur: blur(2px);
+  /* -webkit-backdrop-filter: blur(12px); Safari support */
+
+  /* =========================
+     RGBA COLORS
+  ========================= */
+
+  --rgba-gold: rgba(216, 179, 106, 1);
+  --rgba-gold-soft: rgba(216, 179, 106, 0.15);
+
+  --rgba-black: rgba(10, 10, 10, 1);
+  --rgba-black-overlay: rgba(10, 10, 10, 0.9);
+
+  --rgba-white: rgba(255, 255, 255, 1);
+  --rgba-white-soft: rgba(255, 255, 255, 0.1);
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --ff-heading: "Cormorant Garamond", serif;
+  --ff-body: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --fs-900: 4rem;
+  --fs-800: 3rem;
+  --fs-700: 2.25rem;
+  --fs-600: 1.75rem;
+  --fs-500: 1.5rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  /* =========================
+     SPACING
+  ========================= */
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* =========================
+     BORDER RADIUS
+  ========================= */
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 999px;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* =========================
+     CARD SYSTEM (MEAL GRID)
+  ========================= */
+
+  --card-bg: var(--clr-bg-secondary);
+  --card-bg-hover: var(--clr-bg-tertiary);
+  --card-border: rgba(255, 255, 255, 0.08);
+
+  --card-text-primary: var(--clr-text-light);
+  --card-text-secondary: var(--clr-text-light-muted);
+
+  --card-accent: var(--clr-gold);
+  --card-accent-soft: var(--rgba-gold-soft);
+
+  --card-width: 280px;
+  --card-height: 360px;
+
+  --card-padding: var(--space-md);
+  --card-gap: var(--space-md);
+
+  --card-radius: var(--radius-lg);
+  --card-image-radius: var(--radius-md);
+
+  --card-shadow: var(--shadow-md);
+  --card-shadow-hover: var(--shadow-lg);
+
+  --card-transition: var(--transition-normal);
+  --card-hover-lift: -8px;
+  --card-scale-hover: 1.02;
+
+  /* =========================
+     BUTTON COLORS
+  ========================= */
+
+  --btn-primary-bg: var(--clr-gold);
+  --btn-primary-text: var(--clr-bg-primary);
+
+  --btn-primary-hover: var(--clr-gold-light);
+
+  --btn-secondary-bg: var(--clr-bg-secondary);
+  --btn-secondary-text: var(--clr-text-light);
+  --btn-secondary-hover: var(--clr-bg-tertiary);
+
+  --btn-outline-border: rgba(255, 255, 255, 0.2);
+  --btn-outline-text: var(--clr-text-light);
+
+  --btn-danger-bg: var(--clr-danger);
+  --btn-success-bg: var(--clr-success);
+
+  /* =========================
+     BUTTON SIZING
+  ========================= */
+
+  --btn-padding-sm: 0.4rem 0.8rem;
+  --btn-padding-md: 0.6rem 1.2rem;
+  --btn-padding-lg: 0.9rem 1.6rem;
+
+  --btn-radius: var(--radius-full);
+
+  /* =========================
+     BUTTON TYPOGRAPHY
+  ========================= */
+
+  --btn-font-size-sm: var(--fs-300);
+  --btn-font-size-md: var(--fs-400);
+  --btn-font-size-lg: var(--fs-500);
+
+  --btn-font-weight: var(--fw-medium);
+
+  /* =========================
+     BUTTON EFFECTS
+  ========================= */
+
+  --btn-transition: var(--transition-normal);
+  --btn-shadow: var(--shadow-sm);
+  --btn-shadow-hover: var(--shadow-md);
+
+  --btn-hover-lift: -2px;
+
+  --clr-grey-900: #1f1f1f;
+  --clr-grey-700: #3a3a3a;
+  --clr-grey-400: #a1a1a1;
+  --clr-grey-200: #e5e5e5;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  box-sizing: border-box;
+}
