@@ -18,6 +18,12 @@ const heroSection = document.querySelector(".hero-section");
 const mealFeatures = document.querySelector(".meal-features");
 const mealGrid = document.querySelector(".meal-grid");
 const mostPopularCon = document.querySelector(".popular-meal");
+const backBtn = document.querySelector(".back-btn");
+const header = document.querySelector(".header");
+const navLinkCon = document.querySelector(".nav-links");
+const categoryGrid = document.querySelector(".category-grid");
+const categoryCon = document.querySelector(".exploree");
+const heroCta = document.querySelector(".hero-cta");
 
 const homePageManager = new HomePageManager(
   0,
@@ -61,6 +67,7 @@ function initializeHomepage() {
   updateSlide(slides);
   setInterval(nextSlide.bind(null, slides), 5000);
   renderFilters(filters, filtersCon);
+  homePageManager.renderCategory(categoryGrid);
 }
 
 initializeHomepage();
@@ -84,13 +91,13 @@ searchBar.querySelector("input").addEventListener("input", (e) => {
 
   if (!value) {
     debouncedSearch.cancel();
-    openSections(heroSection, mealFeatures);
+    openSections(heroSection, mealFeatures, categoryCon);
     closeSections(mealGrid);
     initializeHomepage();
     return;
   }
   openSections(mealGrid);
-  closeSections(heroSection, mealFeatures);
+  closeSections(heroSection, mealFeatures, categoryCon);
 
   debouncedSearch(value);
 });
@@ -108,8 +115,10 @@ filtersCon.addEventListener("click", (e) => {
   const filterValue = filter.dataset.filterValue;
   if (!filterValue) return;
   homePageManager.searchMeal(filterValue.toLowerCase());
-  closeSections(heroSection, mealFeatures);
+  closeSections(heroSection, mealFeatures, categoryCon);
   openSections(mealGrid);
+  backBtn.classList.remove("close");
+  backBtn.classList.add("show");
 });
 
 cardsContainer.addEventListener("click", (e) => {
@@ -129,4 +138,77 @@ mealGrid.addEventListener("click", (e) => {
     const mealId = mealCard.dataset.cardId;
     homePageManager.goTo("product", mealId);
   }
+});
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".back-btn");
+  if (!btn) return;
+  closeSections(mealGrid);
+  openSections(heroSection, mealFeatures, categoryCon);
+  btn.classList.remove("show");
+  btn.classList.add("close");
+
+  filtersCon
+    .querySelectorAll(".filter")
+    .forEach((fil) => fil.classList.remove("active-meal-filter"));
+});
+
+navLinkCon.addEventListener("click", (e) => {
+  const links = navLinkCon.querySelectorAll("li");
+  const link = e.target.closest("li");
+  if (!link) return;
+
+  links.forEach((li) => {
+    li.classList.remove("active-nav-link");
+    link.classList.add("active-nav-link");
+  });
+  const linkValue = link.dataset.value;
+
+  if (linkValue === "explore") {
+    closeSections(mealGrid);
+    openSections(mealFeatures, heroSection);
+    categoryCon.scrollIntoView({
+      behavior: "smooth",
+    });
+    btn.classList.remove("show");
+    btn.classList.add("close");
+    initializeHomepage();
+  }
+
+  if (linkValue === "home") {
+    closeSections(mealGrid);
+    openSections(mealFeatures, heroSection);
+    heroSection.scrollIntoView({
+      behavior: "smooth",
+    });
+    btn.classList.remove("show");
+    btn.classList.add("close");
+    initializeHomepage();
+  }
+});
+
+heroCta.addEventListener("click", () => {
+  categoryCon.scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
+categoryGrid.addEventListener("click", async (e) => {
+  const button = e.target.closest(".explore-btn");
+  if (!button) return;
+  const categoryName = button.dataset.categoryId;
+  const meals = await homePageManager.searchByCategory(categoryName);
+
+  if (meals) {
+    closeSections(heroSection, mealFeatures, categoryCon);
+    openSections(mealGrid);
+    homePageManager.renderLookUp(meals, mealGrid);
+    backBtn.classList.remove("close");
+    backBtn.classList.add("show");
+  } else {
+    closeSections(mealGrid);
+    openSections(heroSection, mealFeatures, categoryCon);
+    initializeHomepage();
+  }
+  console.log(categoryName);
 });

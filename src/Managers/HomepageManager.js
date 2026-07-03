@@ -126,7 +126,59 @@ export class HomePageManager {
     }
     this.updateMealCard();
   }
-  navigatePage(con) {
-    con.addEventListener("click", () => {});
+  async explore() {
+    const res = await fetch(
+      "https://www.themealdb.com/api/json/v1/1/categories.php",
+    );
+    const data = await res.json();
+    const { categories } = data;
+    return categories;
+  }
+  async renderCategory(con) {
+    con.innerHTML = "";
+    const categoriesArr = await this.explore();
+
+    let html = "";
+    categoriesArr.forEach((category) => {
+      const str =
+        category.strCategoryDescription.length >= 400
+          ? category.strCategoryDescription.slice(0, 400) +
+            `... <a class="see-more">see more</a>`
+          : category.strCategoryDescription;
+      html += `
+      <article class="category-card">
+       <img
+          src="${category.strCategoryThumb}"
+          alt="${category.strCategory}"
+        />
+        <div class="category-content">
+        <h3>${category.strCategory}"</h3>
+        <p>${str}</p>
+       <button class="explore-btn" data-category-id="${category.strCategory}">
+      Explore
+      <span>→</span>
+        </button>
+        </div>
+      </article>
+      `;
+    });
+
+    con.insertAdjacentHTML("beforeend", html);
+  }
+
+  async searchByCategory(category) {
+    const res = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`,
+    );
+    const data = await res.json();
+    if (!data.meals) return [];
+    const meals = data.meals.map((meal) => ({
+      id: meal.idMeal,
+      country: meal.strArea,
+      src: meal.strMealThumb,
+      name: meal.strMeal,
+    }));
+
+    return meals;
   }
 }

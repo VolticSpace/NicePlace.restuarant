@@ -64,20 +64,6 @@ header {
   font-weight: 400;
 }
 
-.back-btn {
-  padding: 12px 28px;
-
-  border: none;
-
-  background: var(--gold);
-
-  cursor: pointer;
-
-  border-radius: 50px;
-
-  font-weight: 600;
-}
-
 .meal-details {
   width: min(1200px, 90%);
 
@@ -290,4 +276,11 @@ header {
   .video-wrapper iframe {
     height: 350px;
   }
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: flex;
 }

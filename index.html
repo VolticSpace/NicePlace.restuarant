@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/home.css" />
 
+    <link rel="stylesheet" href="styles/footer.css" />
+
+    <link rel="stylesheet" href="styles/explore.css" />
+    <link rel="stylesheet" href="styles/mealFeatures.css" />
+
+    <link rel="stylesheet" href="styles/heroSection.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+
     <script defer type="module" src="src/controllers/HomePageContr.js"></script>
   </head>
   <body>
@@ -122,7 +130,23 @@
 
     <div class="header">
       <div class="navigation-bar">
-        <button class="back-btn">←</button>
+        <button class="back-btn close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0a0a0a"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-chevron-left-icon lucide-chevron-left"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          <p>back</p>
+        </button>
         <div class="hor-flex-2-c">
           <p class="logo-text">
             <span class="normal">Nice</span>
@@ -152,25 +176,6 @@
           <li class="explore" data-value="explore">Explore</li>
           <li class="favorites" data-value="favorites">Favorites</li>
         </ul>
-        <div class="more-icon">
-          <svg
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#d8b36a"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-menu-icon lucide-menu"
-          >
-            <path d="M4 5h16" />
-            <path d="M4 12h16" />
-            <path d="M4 19h16" />
-          </svg>
-        </div>
       </div>
     </div>
     <section class="hero-section">
@@ -200,6 +205,25 @@
             served in a warm and inviting atmosphere.
           </p>
         </div>
+        <button class="hero-cta">
+          Explore Meals
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right-icon lucide-arrow-right"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
       </div>
       <div class="ai-assistance-btn">
         <div class="dot"></div>
@@ -214,11 +238,12 @@
         <p class="meal-text-normal">Find what you're craving today</p>
       </div>
       <div class="categories">
-        <p>Categories</p>
+        <p>Quick Filters</p>
       </div>
       <div class="meal-discovery-filters"></div>
       <div class="popular-meal">
         <p>Popular Meals</p>
+        <span>Most loved recipes by our community</span>
       </div>
       <div class="meal-cards-slider">
         <button class="left">
@@ -336,5 +361,109 @@
         </div>
       </div>
     </section>
+
+    <section class="exploree">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <!-- <span class="section-tag">Discover</span> -->
+            <p class="explore-category">Explore Categories</p>
+            <p class="body-text">
+              Browse delicious meals from different food categories and discover
+              your next favorite recipe.
+            </p>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <!-- Category Card -->
+          <article class="category-card">
+            <img
+              src="https://www.themealdb.com/images/category/beef.png"
+              alt="Beef"
+            />
+
+            <div class="category-content">
+              <h3>Beef</h3>
+              <p>Juicy steaks, burgers and hearty beef recipes.</p>
+
+              <button>
+                Explore
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <img
+              src="https://www.themealdb.com/images/category/chicken.png"
+              alt="Chicken"
+            />
+
+            <div class="category-content">
+              <h3>Chicken</h3>
+              <p>Grilled, roasted and crispy chicken dishes.</p>
+
+              <button>
+                Explore
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <img
+              src="https://www.themealdb.com/images/category/dessert.png"
+              alt="Dessert"
+            />
+
+            <div class="category-content">
+              <h3>Dessert</h3>
+              <p>Cakes, pastries and sweet treats.</p>
+
+              <button>
+                Explore
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Generate the remaining cards dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>Nice Place</h2>
+          <p>
+            Discover delicious meals from around the world with a beautiful,
+            simple, and seamless experience.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#popular">Popular Meals</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>About</h3>
+          <p>Built using TheMealDB API.</p>
+          <p>Designed & Developed by <span>VolticSpace</span>.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nice Place. All rights reserved.</p>
+        <p>Crafted with ❤️ by <span>VolticSpace</span></p>
+      </div>
+    </footer>
   </body>
 </html>

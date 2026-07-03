@@ -11,6 +11,7 @@ const mealCategory = document.getElementById("mealCategory");
 const blogBtn = document.querySelector(".blog-btn");
 const videoBtn = document.querySelector(".outline-btn");
 const videoWrapper = document.querySelector(".video-wrapper");
+const backBtn = document.querySelector(".back-btn");
 
 const productManager = new ProductManager();
 
@@ -61,12 +62,6 @@ async function init() {
   });
 
   ingredientsCon.insertAdjacentHTML("beforeend", html);
-  const youtubeUrl = meal.video;
-
-  const videoId = new URL(youtubeUrl).searchParams.get("v");
-  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-
-  videoFrame.src = embedUrl;
   const tag = meal.tag === null ? "" : `${meal.tag}`;
   mealArea.textContent = meal.country;
   mealTag.textContent = tag;
@@ -82,5 +77,26 @@ async function init() {
       behavior: "smooth",
     });
   });
+  const youtubeUrl = meal.video;
+  if (!youtubeUrl) {
+    videoFrame.innerHTML = "No video found";
+    return;
+  }
+  const videoId = new URL(youtubeUrl).searchParams.get("v");
+  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
+  videoFrame.src = embedUrl;
 }
 init();
+
+function updateSections(sections, show) {
+  sections.forEach((section) => {
+    section.classList.toggle("open", show);
+    section.classList.toggle("close", !show);
+  });
+}
+
+function goBack({ open = [], close = [] }) {
+  updateSections(open, true);
+  updateSections(close, false);
+}
