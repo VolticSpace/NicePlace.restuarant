@@ -25,7 +25,7 @@
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
@@ -33,7 +33,7 @@
   background: var(--rgba-black-overlay);
   border: none;
   border-radius: 22px;
-  max-height: 600px;
+  min-height: 600px;
   overflow: hidden;
   transition: 0.35s;
   cursor: pointer;
@@ -74,4 +74,25 @@
 
 .category-content button:hover {
   gap: 1rem;
+}
+
+@media (max-width: 1021px) {
+  .category-card {
+    height: 680px;
+  }
+  .category-content {
+    height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    height: 700px;
+  }
+  .category-content {
+    height: 440px;
+  }
+  .body-text {
+    text-align: center;
+  }
 }
