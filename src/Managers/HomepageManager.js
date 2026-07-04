@@ -41,10 +41,9 @@ export class HomePageManager {
       html += `
     <div class="meal-card" data-card-id="${meal.id}">
   <img class="image card-img" src="${meal.src}" alt="" />
-  <div class="slider-top-overlay card-overlay"></div>
+  <div class="card-overlay"></div>
   <div class="meal-card-content">
     <p class="meal-name">${stringLength}</p>
-    <p class="meal-text">Made with fine rice and red tomatoes</p>
     <p class="meal-category">${
       meal.country === null ? "Unknown Country" : `${meal.country}`
     }</p>

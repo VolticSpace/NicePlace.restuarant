@@ -41,7 +41,6 @@
   font-size: var(--fs-800);
   font-family: var(--ff-heading);
   font-weight: var(--fw-medium);
-  /* max-width: max-content; */
 }
 
 .meal-cards-slider {
@@ -76,23 +75,17 @@
   transition: all 1s;
 }
 
+@media (max-width: 480px) {
+  .meal-card {
+    flex: 0 0 calc((100% - 2.4rem));
+    min-width: calc((100% - 2.4rem));
+  }
+}
+
 .card-img,
 .card-overlay {
   border: none;
   border-radius: 2.5rem;
-}
-
-.slider-top-overlay {
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 10, 0.7),
-    rgba(10, 10, 10, 0.3)
-  );
-
-  z-index: 1;
 }
 
 .card-overlay {

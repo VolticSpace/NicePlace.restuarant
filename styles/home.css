@@ -1,45 +1,3 @@
-.navigation-bar {
-  display: flex;
-  align-items: center;
-
-  gap: 4rem;
-}
-.hor-flex-2-c {
-  display: flex;
-  justify-content: space-between;
-}
-.logo-text {
-  font-size: var(--fs-700);
-  font-weight: var(--fw-medium);
-  font-family: var(--ff-body);
-  color: var(--clr-gold);
-}
-.normal {
-  font-family: var(--ff-heading);
-}
-.italic {
-  font-family: var(--ff-heading);
-}
-
-.medium-text {
-  font-size: var(--fs-500);
-  font-weight: var(--fw-medium);
-  color: var(--clr-gold-light);
-  animation: textDownSlideIn 1s ease-out forwards;
-}
-.normal-text {
-  font-size: var(--fs-400);
-  font-weight: var(--fw-regular);
-  color: var(--clr-text-light);
-  line-height: 1.4;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid var(--clr-gold-light);
-  width: 0;
-  animation:
-    typing 3s steps(30, end) forwards,
-    blink 0.7s;
-}
 @keyframes typing {
   from {
     width: 0;
@@ -180,7 +138,6 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3rem;
   z-index: 100;
   padding: 1rem 2rem;
   background: #171717;

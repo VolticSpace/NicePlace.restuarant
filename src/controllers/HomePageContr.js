@@ -166,7 +166,7 @@ navLinkCon.addEventListener("click", (e) => {
 
   if (linkValue === "explore") {
     closeSections(mealGrid);
-    openSections(mealFeatures, heroSection);
+    openSections(mealFeatures, heroSection, categoryCon);
     categoryCon.scrollIntoView({
       behavior: "smooth",
     });
