@@ -17,7 +17,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/general.css" />
-    <link rel="stylesheet" href="styles/home.css" />
 
     <link rel="stylesheet" href="styles/footer.css" />
 
@@ -130,8 +129,9 @@
       </div>
     </section>
 
-    <div class="header">
+    <section class="header">
       <div class="navigation-bar">
+        <!--page switching button-->
         <button class="back-btn close">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -149,12 +149,25 @@
           </svg>
           <p>back</p>
         </button>
-        <div class="hor-flex-2-c">
-          <p class="logo-text">
-            <span class="normal">Nice</span>
-            <span class="italic">Place</span>
-          </p>
-        </div>
+        <span class="brand-name">Nice Place</span>
+        <!--mobile view menu-->
+        <svg
+          class="hamburger active"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#c49b4f"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu"
+        >
+          <path d="M4 5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 19h16" />
+        </svg>
         <div class="search-bar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -174,12 +187,12 @@
           <input type="text" placeholder="Search meal" />
         </div>
         <ul class="nav-links">
-          <li class="active-nav-link home" data-value="home">Home</li>
-          <li class="explore" data-value="explore">Explore</li>
-          <li class="favorites" data-value="favorites">Favorites</li>
+          <li class="nav-link active-nav-link" data-value="home">Home</li>
+          <li class="nav-link" data-value="explore">Explore</li>
+          <li class="nav-link" data-value="favourites">Favorites</li>
         </ul>
       </div>
-    </div>
+    </section>
     <section class="hero-section">
       <div class="image-slider">
         <div class="slide">
@@ -196,18 +209,17 @@
       </div>
       <div class="slider-top-overlay"></div>
       <div class="hero-content">
-        <div class="hero-text-con">
-          <span class="medium-text">Welcome to Nice Place</span>
-          <p class="bold-text">
-            <span class="italic">
-              Delicious Meals Crafted For<br />Every Occasion
-            </span>
-          </p>
-          <p class="normal-text mg-top-2">
-            Enjoy freshly prepared dishes made from quality ingredients,<br />
-            served in a warm and inviting atmosphere.
-          </p>
-        </div>
+        <span class="medium-text">Welcome to Nice Place</span>
+
+        <span class="italic">
+          Delicious Meals Crafted For<br />Every Occasion
+        </span>
+
+        <p class="hero-body-text">
+          Enjoy freshly prepared dishes made from quality ingredients,served in
+          a warm and inviting atmosphere.
+        </p>
+
         <button class="hero-cta">
           Explore Meals
 
@@ -244,10 +256,7 @@
         <p>Quick Filters</p>
       </div>
       <div class="meal-discovery-filters"></div>
-      <div class="popular-meal">
-        <p>Popular Meals</p>
-        <span>Most loved recipes by our community</span>
-      </div>
+
       <div class="meal-cards-slider">
         <button class="left">
           <svg

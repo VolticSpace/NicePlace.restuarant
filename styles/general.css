@@ -193,7 +193,7 @@
   --clr-grey-900: #1f1f1f;
   --clr-grey-700: #3a3a3a;
   --clr-grey-400: #a1a1a1;
-  --clr-grey-200: #e5e5e5;
+  --clr-grey-200: #eeeeee;
 }
 * {
   margin: 0;
@@ -204,4 +204,12 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+button {
+  font-family: var(--ff-body);
 }

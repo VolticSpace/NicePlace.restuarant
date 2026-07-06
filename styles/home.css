@@ -13,58 +13,12 @@
     border-color: transparent;
   }
 }
-.mg-top-2 {
-  margin-top: 1.6rem;
-}
-.bold-text {
-  font-size: var(--fs-900);
-  font-weight: var(--fw-bold);
-  color: var(--clr-gold-light);
-  line-height: 1;
-  animation: textSlideIn 1s ease-out forwards;
-}
-.search-bar {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--clr-surface-alt);
-  height: 1rem;
-  flex: 1;
-  border: none;
-  border-radius: 4rem;
-}
-.search-bar input {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: none;
-  font-family: var(--ff-heading);
-  color: var(--clr-text-primary);
-  font-size: var(--fs-400);
-}
-.meal-discovery-filters {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
-  gap: 1rem;
-  align-items: center;
-}
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-}
 
 @media (max-width: 420px) {
   .meal-discovery-filters {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  .search-bar,
-  .nav-links {
-    display: none;
   }
 }
 
@@ -148,27 +102,6 @@
   font-size: var(--fs-400);
 }
 
-.home,
-.explore,
-.favorites {
-  list-style: none;
-  font-family: var(--ff-body);
-  color: var(--clr-surface-alt);
-  font-size: var(--fs-400);
-  cursor: pointer;
-  transition: all 0.4s ease;
-  margin-bottom: 0.4rem;
-  border-bottom: 2px solid transparent;
-}
-.nav-links li:hover {
-  color: var(--clr-gold-light);
-  border-bottom: 2px solid var(--clr-gold-light);
-}
-.active-nav-link {
-  color: var(--clr-gold-light);
-  border-bottom: 2px solid var(--clr-gold-light);
-}
-
 .more-btn:hover {
   background: var(--clr-gold-dark);
 }
@@ -214,49 +147,6 @@
   font-size: var(--fs-600);
 }
 
-.explore-btn {
-  padding: 1rem 1.6rem;
-  border: none;
-  border-radius: 999px;
-  background: var(--clr-gold);
-  color: #111;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.explore-btn:hover {
-  transform: translateY(-3px);
-}
-
-.explore-btn {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  margin-top: auto;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--clr-gold);
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 768px) {
-  .section-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .section-heading h2 {
-    font-size: 2rem;
-  }
-}
-
-.see-more {
-  font-size: var(--fs-400);
-  color: var(--clr-gold-dark);
-  font-weight: var(--fw-medium);
-}
+/* .explore-btn:hover { */
+/* transform: translateY(-3px); */
+/* } */
