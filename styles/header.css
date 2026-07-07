@@ -194,7 +194,7 @@
   .nav-search-d {
     display: flex;
     flex: 1 0 200px;
-    padding: 0.6rem 0rem;
+    padding: 1rem 0.4rem;
     border: 1px solid transparent;
     font-size: var(--fs-300);
     outline: none;
@@ -204,5 +204,8 @@
   .nav-search-d::placeholder {
     font-family: var(--ff-heading);
     font-size: var(--fs-300);
+  }
+  .ai-assistance-btn {
+    display: none;
   }
 }
