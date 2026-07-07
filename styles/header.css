@@ -130,7 +130,8 @@
 .menu-drop.active {
   position: absolute;
   top: 4.2rem;
-  right: 1.5rem;
+  right: 0;
+  left: 0;
   display: flex;
   padding-block: 1rem;
   padding-inline: 2rem;
