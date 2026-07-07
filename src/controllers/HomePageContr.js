@@ -24,6 +24,11 @@ const navLinkCon = document.querySelector(".nav-links");
 const categoryGrid = document.querySelector(".category-grid");
 const categoryCon = document.querySelector(".exploree");
 const heroCta = document.querySelector(".hero-cta");
+const menuIcon = document.querySelector(".hamburger");
+const modalOverlay = document.querySelector(".modal-overlay");
+const dropMenu = document.querySelector(".menu-drop");
+const searchBox = dropMenu.querySelector("input");
+const searchIcon = dropMenu.querySelector("svg");
 
 const homePageManager = new HomePageManager(
   0,
@@ -61,6 +66,11 @@ const filters = [
     src: "assets/goatMeat.jfif",
   },
 ];
+
+function toggleDropMenu() {
+  modalOverlay.classList.toggle("active");
+  dropMenu.classList.toggle("active");
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   function initializeHomepage() {
@@ -104,6 +114,47 @@ window.addEventListener("DOMContentLoaded", () => {
     debouncedSearch(value);
   });
 
+  menuIcon.addEventListener("click", () => {
+    toggleDropMenu();
+  });
+
+  if (dropMenu) {
+    dropMenu.addEventListener("click", (e) => {
+      const link = e.target;
+      const linkValue = link.dataset.value;
+      if (!linkValue) return;
+
+      if (linkValue === "explore") {
+        categoryCon.scrollIntoView({
+          behavior: "smooth",
+        });
+        toggleDropMenu();
+      }
+      if (linkValue === "home") {
+        heroSection.scrollIntoView({
+          behavior: "smooth",
+        });
+
+        toggleDropMenu();
+      }
+      if (linkValue === "favourites") {
+        toggleDropMenu();
+      }
+    });
+  }
+
+  if (searchIcon && searchBox) {
+    searchIcon.addEventListener("click", (e) => {
+      e.preventDefault();
+      const searchValue = searchBox.value;
+      homePageManager.searchMeal(searchValue);
+      searchBox.value = "";
+      openSections(mealGrid);
+      closeSections(heroSection, categoryCon, mealFeatures);
+      backBtn.classList.add("show");
+      toggleDropMenu();
+    });
+  }
   filtersCon.addEventListener("click", (e) => {
     const filter = e.target.closest(".filter");
     const filters = filtersCon.querySelectorAll(".filter");
